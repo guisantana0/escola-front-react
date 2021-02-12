@@ -7,7 +7,7 @@ const Escolas =  () => {
     const [escolas,setEscolas] = useState([]);
     
     const obterEscolasDaApi = () =>{
-        axios.get('http://localhost:80/escola-api/escolas/').then( resultado => setEscolas(resultado.data))
+        axios.get('http://192.168.1.13:80/escola-api/escolas/').then( resultado => setEscolas(resultado.data))
     };
 
     useEffect(() => {

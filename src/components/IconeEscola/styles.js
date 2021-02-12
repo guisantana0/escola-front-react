@@ -9,6 +9,7 @@ export const Container = styled.div`
   padding: 12px;
   border: 1px #c0c0c0 dotted;
   margin: 12px;
+ 
 `;
 
 export const Titulo = styled.div`

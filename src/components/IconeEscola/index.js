@@ -5,7 +5,7 @@ import { Container, Titulo, Endereco } from './styles';
 const IconeEscola = ({dados,...props}) => {
     return (
         <Container>
-            <Link to={dados.link}>
+            <Link to={`escolas/${dados.id}`}>
                 <Titulo>
                     {dados.nome}
                 </Titulo>
