@@ -1,12 +1,13 @@
 import React from 'react';
+import Apresentacao from '../components/Apresentacao';
 // import Escolas from './Escolas';
-
 const Home = () => {
 
     return (
-        <div>
-            {/* <Escolas/> */}
-        </div>
+        <>
+            <Apresentacao></Apresentacao>
+           
+        </>
     );
 }
 

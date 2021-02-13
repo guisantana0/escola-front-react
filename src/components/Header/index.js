@@ -1,15 +1,17 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import { Container } from './styles';
+import { Container, Margem } from './styles';
 
 function Header() {
-  return (
+  return (<>
+    <Margem/>
       <Container>
-          <Link to={`/escolas`}>
+          <Link to={`/`}>
             Escola.com
           </Link>
       </Container>
+    </>
   );
 }
 

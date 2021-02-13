@@ -1,16 +1,16 @@
 import React from 'react';
 
-import {InformacoesEstilo,NomeEscola} from './styles';
+import {InformacoesEstilo,NomeEscola,EnderecoEscola} from './styles';
 
 const InformacoesEscola = ({dados, ...rest}) => {
     return (<InformacoesEstilo>
         <NomeEscola>
-            {dados.nome}
+            {dados && dados.nome}
         </NomeEscola>
-        <div>
+        <EnderecoEscola>
             Endereço:  
-            {dados.endereco}
-        </div>
+            {dados && dados.endereco}
+        </EnderecoEscola>
     </InformacoesEstilo>)
 }
 

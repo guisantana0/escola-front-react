@@ -4,7 +4,9 @@ import { Container,NivelAno } from './styles';
 
 function TurmaEscola({dados, ...resto}) {
   return (<>
+  
     <Container>
+    <Link to={`/turma/${dados.id}`} exact>
       <NivelAno>
           <span>
             {dados.serie}ª Série do {dados.nivel_ensino}
@@ -16,8 +18,9 @@ function TurmaEscola({dados, ...resto}) {
         <div>
           {dados.turno}
         </div>  
-            
+      </Link>
     </Container>
+  
   </>);
 }
 

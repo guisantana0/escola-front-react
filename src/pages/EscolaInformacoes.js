@@ -4,6 +4,7 @@ import {Link} from 'react-router-dom';
 
 import InformacoesEscola from './../components/InformacoesEscola';
 import TurmaEscola from './../components/TurmaEscola';
+import Navegacao from '../components/Navegacao';
 
 const EscolaInformacoes = ({ ...params }) => {
 
@@ -22,7 +23,13 @@ const EscolaInformacoes = ({ ...params }) => {
     useEffect(buscaInformacoesDaEscola,[]);
     useEffect(buscaTurmasDaEscola,[]);
 
+    const indiceNavegacao = [
+        {nome:'Principal',rota:'/'},
+        {nome:'Escola',rota:'/escolas'},
+    ]
+
     return (<>
+            <Navegacao caminhos={indiceNavegacao}></Navegacao>
             {
                 informacoes.map((informacao)=> <InformacoesEscola dados={informacao}/>)
             }

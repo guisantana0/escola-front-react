@@ -19,7 +19,18 @@ export const Container = styled.div`
 `;
 
 export const Titulo = styled.div`
+    display:flex;
+    flex-direction:row;
+`;
 
+
+export const Plus = styled.div`
+      background-color: cadetblue;
+    display: table;
+    border-radius: 50%;
+    margin-top:19px;
+    line-height: 24px;
+    height: 10px;
 `;
 
 

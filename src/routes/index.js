@@ -5,18 +5,22 @@ import Escolas from './../pages/Escolas';
 
 import Layout from './../components/_layout';
 import EscolaInformacoes from '../pages/EscolaInformacoes';
+import TurmaInformacoes from '../pages/TurmaInformacoes';
 
 const Router = () =>{
     return (<>
        
             <BrowserRouter>
-                <Layout>
+                
                     <Switch>
                         <Route path='/' exact component={Home}/>
-                        <Route path='/escolas' exact component={Escolas}/>
-                        <Route path='/escolas/:id' exact component={EscolaInformacoes}/>
+                        <Layout>
+                            <Route path='/escolas' exact component={Escolas}/>
+                            <Route path='/escolas/:id' exact component={EscolaInformacoes}/>
+                            <Route path='/turma/:id' exact component={TurmaInformacoes}/>
+                        </Layout>
                     </Switch>
-                </Layout>
+                
             </BrowserRouter>
         
         </>
