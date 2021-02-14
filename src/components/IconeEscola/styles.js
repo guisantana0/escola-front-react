@@ -2,14 +2,16 @@ import styled from 'styled-components';
 
 export const Container = styled.div`
   display:flex;
-  flex-direction:column;
+  flex-direction:row;
   border-radius: 10px;
   background-color: white;
+
   a{
-    font-size: 48px;
-    text-decoration:none;
-    color: #467eac;
+      text-decoration:none;
+      color: #467eac;
   }
+ 
+
   
   padding: 40px;
   border: 2px #c0c0c0 solid;
@@ -19,7 +21,21 @@ export const Container = styled.div`
 `;
 
 export const Titulo = styled.div`
+   @media screen and (max-width:425px)
+  {
+      font-size: 12px;
+  }
+  
+  
+  @media screen and (max-width:768px)
+  {
+      font-size: 32px;
+  }
 
+  @media screen and (min-width:769px)
+  {
+      font-size: 48px;
+  }
 `;
 
 

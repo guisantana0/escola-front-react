@@ -6,10 +6,10 @@ import {Container} from './styles';
 const Navegacao = ({caminhos}) => {
     return (<Container>
         {
-            caminhos.map( (caminho) => <Link to={caminho.rota}><span>{caminho.nome}</span></Link>)
+            caminhos.map( (caminho) => <Link key={caminho.rota} to={caminho.rota}><span>{caminho.nome}</span></Link>)
         }    
 
     </Container>);
-};
+};  
 
 export default Navegacao;

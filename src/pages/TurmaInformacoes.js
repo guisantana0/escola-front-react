@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import Aluno from '../components/Aluno';
-import axios from 'axios';
 import InformacoesTurma from '../components/InformacoesTurma';
 import InformacoesEscola from '../components/InformacoesEscola';
 import Navegacao from '../components/Navegacao';
+import api from '../services/api';
 
 const TurmaInformacoes = ({...params}) => {
     
@@ -23,15 +23,15 @@ const TurmaInformacoes = ({...params}) => {
     }
 
     const obtemListaDeAlunos = () =>{
-        axios.get(`http://192.168.1.13:80/escola-api/alunos/turma/?turma_id=${id}`).then( (resposta) => { console.log(resposta.data);setAlunos( resposta.data );} );
+        api.get(`alunos/turma/?turma_id=${id}`).then( (resposta) => { console.log(resposta.data);setAlunos( resposta.data );} );
     };
 
     const obtemInformacoesDaTurma = () => {
-        axios.get(`http://192.168.1.13:80/escola-api/turmas/?id=${id}`).then( (resposta) => { console.log(resposta.data);setInformacoes( resposta.data[0] );} );
+        api.get(`turmas/?id=${id}`).then( (resposta) => { console.log(resposta.data);setInformacoes( resposta.data[0] );} );
     };
 
     const obtemInformacoesDaEscola = () => {
-        axios.get(`http://192.168.1.13:80/escola-api/escolas/?id=${informacoes.escola_id}`).then( (resposta) => { console.log(resposta.data);setEscola( resposta.data[0] );} );
+        api.get(`escolas/?id=${informacoes.escola_id}`).then( (resposta) => { console.log(resposta.data);setEscola( resposta.data[0] );} );
     };
 
 

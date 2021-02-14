@@ -5,7 +5,7 @@ import { Container, Titulo, Endereco,Plus } from './styles';
 const IconeNovaEscola = ({dados,...props}) => {
     return (
         <Container>
-            <Link to={`escolas/nova`}>
+            <Link to={`escola/manter`}>
                 
                 <Titulo>
                 <Plus>+</Plus>

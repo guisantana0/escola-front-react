@@ -3,13 +3,14 @@ import React, {useEffect, useState} from 'react';
 import IconeEscola from '../components/IconeEscola';
 import IconeNovaEscola from '../components/IconeNovaEscola';
 import Navegacao from '../components/Navegacao';
+import api from '../services/api';
 
 const Escolas =  () => {
     
     const [escolas,setEscolas] = useState([]);
     
     const obterEscolasDaApi = () =>{
-        axios.get('http://192.168.1.13:80/escola-api/escolas/').then( resultado => setEscolas(resultado.data))
+        api.get('escolas/').then( resultado => setEscolas(resultado.data))
     };
 
     useEffect(() => {

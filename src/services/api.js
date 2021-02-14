@@ -1,7 +1,7 @@
 import axios from 'axios';
-import * as Env from '../appsettings.json';
+import Env from '../appsettings';
 
-const api = new axios({
+const api = new axios.create({
     baseURL: Env.base_url
 })
 
