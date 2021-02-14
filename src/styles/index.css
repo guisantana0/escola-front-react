@@ -32,7 +32,56 @@ label{
 }
 input[type='text']{
   display: block;
-  width: 100%;
+  padding: .375rem .75rem;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #212529;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid #ced4da;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border-radius: .25rem;
+  transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+  width: -webkit-fill-available;
+}
+
+select{
+  -webkit-writing-mode: horizontal-tb !important;
+  text-rendering: auto;
+  color: -internal-light-dark(black, white);
+  letter-spacing: normal;
+  word-spacing: normal;
+  text-transform: none;
+  text-indent: 0px;
+  text-shadow: none;
+  display: flex;
+  text-align: start;
+  appearance: menulist;
+  box-sizing: border-box;
+  align-items: center;
+  white-space: pre;
+  -webkit-rtl-ordering: logical;
+  background-color: -internal-light-dark(rgb(255, 255, 255), rgb(59, 59, 59));
+  cursor: default;
+  margin: 0em;
+  border-radius: 2px;
+  border-width: 1px;
+  border-style: solid;
+  border: 1px solid #ced4da;
+  border-image: initial;
+  padding: .6rem .75rem;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  width: -webkit-fill-available;
+}
+
+input[type='number']{
+  display: block;
+  width: -webkit-fill-available;
   padding: .375rem .75rem;
   font-size: 1rem;
   font-weight: 400;
@@ -76,6 +125,11 @@ button:hover{
   background-color: #e0e4e9;
 }
 
+.form-group{
+  padding:8px;
+  margin:4px;
+}
+
 .card{
   position: relative;
     display: flex;
@@ -105,10 +159,27 @@ button:hover{
   border-color: #f5c6cb;
 }
 
+.success{
+  color: #fff;
+  background-color: #28a745;
+  border-color: #28a745;
+}
+
+.success:hover{
+  color: #fff;
+  background-color: #35ce57;
+  border-color: #28a745;
+}
+
+
 .warning{ 
   color: #856404;
   background-color: #fff3cd;
   border-color: #ffeeba;
+}
+
+.pull-right{
+  float:right;
 }
 
 .m-1{

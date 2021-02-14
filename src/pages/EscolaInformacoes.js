@@ -5,6 +5,7 @@ import InformacoesEscola from './../components/InformacoesEscola';
 import TurmaEscola from './../components/TurmaEscola';
 import Navegacao from '../components/Navegacao';
 import api from '../services/api';
+import IconeNovaTurmaEscola from '../components/IconeNovaTurmaEscola';
 
 const EscolaInformacoes = ({ ...params }) => {
 
@@ -31,8 +32,9 @@ const EscolaInformacoes = ({ ...params }) => {
     return (<>
             <Navegacao caminhos={indiceNavegacao}></Navegacao>
             {
-                informacoes.map((informacao)=> <InformacoesEscola key={informacoes.id} dados={informacao}/>)
+                informacoes.map((informacao)=> <InformacoesEscola key={informacao.id} dados={informacao}/>)
             }
+                <IconeNovaTurmaEscola id={informacoes[0]?.id}></IconeNovaTurmaEscola>
             {
                 turmas.map((turma)=> <TurmaEscola key={turma.id} dados={turma}/>)
             }
