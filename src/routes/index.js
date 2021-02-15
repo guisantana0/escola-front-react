@@ -8,6 +8,7 @@ import EscolaInformacoes from "../pages/EscolaInformacoes";
 import TurmaInformacoes from "../pages/TurmaInformacoes";
 import EscolaNova from "../pages/EscolaNova";
 import TurmaNova from "../pages/TurmaNova";
+import NovoAlunoNaTurma from "../pages/NovoAlunoNaTurma";
 
 const Router = () => {
   return (
@@ -22,6 +23,7 @@ const Router = () => {
             <Route path="/escola/:id/nova-turma" exact component={TurmaNova} />
             <Route path="/escolas/:id" exact component={EscolaInformacoes} />
             <Route path="/turma/:id" exact component={TurmaInformacoes} />
+            <Route path="/turma/:id/novo-aluno" exact component={NovoAlunoNaTurma} />
           </Layout>
         </Switch>
       </BrowserRouter>

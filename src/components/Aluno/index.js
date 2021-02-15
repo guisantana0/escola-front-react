@@ -11,18 +11,15 @@ const Aluno = ({dados, ...resto}) => {
                 {dados.nome}
             </NomeDoAluno>
             <InformacoesPessoais>
-                <div>
+                <p>
                     {dados.email}
-                </div>
-                <div>
+                </p>
+                <p>
                     Data de nascimento:{dados.data_nascimento}
-                </div>
-                <div>
-                    {dados.email}
-                </div>
-                <div>
+                </p>
+                <p>
                     {dados.genero}
-                </div>
+                </p>
                 
 
                 <small>

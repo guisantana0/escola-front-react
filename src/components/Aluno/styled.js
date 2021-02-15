@@ -12,6 +12,10 @@ export const Container = styled.div`
 export const InformacoesPessoais = styled.div`
     padding:8px;
     font-size:18px;
+
+    p {
+      margin: 4px 5px;
+    }
 `;
 
 export const NomeDoAluno = styled.div`

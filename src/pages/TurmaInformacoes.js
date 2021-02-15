@@ -4,6 +4,7 @@ import InformacoesTurma from '../components/InformacoesTurma';
 import InformacoesEscola from '../components/InformacoesEscola';
 import Navegacao from '../components/Navegacao';
 import api from '../services/api';
+import IconeNovoAlunoNaTurma from '../components/IconeNovoAlunoNaTurma';
 
 const TurmaInformacoes = ({...params}) => {
     
@@ -23,15 +24,15 @@ const TurmaInformacoes = ({...params}) => {
     }
 
     const obtemListaDeAlunos = () =>{
-        api.get(`alunos/turma/?turma_id=${id}`).then( (resposta) => { console.log(resposta.data);setAlunos( resposta.data );} );
+        api.get(`alunos/turma/?turma_id=${id}`).then( (resposta) =>  setAlunos( resposta.data ) );
     };
 
     const obtemInformacoesDaTurma = () => {
-        api.get(`turmas/?id=${id}`).then( (resposta) => { console.log(resposta.data);setInformacoes( resposta.data[0] );} );
+        api.get(`turmas/?id=${id}`).then( (resposta) => setInformacoes( resposta.data[0] ) );
     };
 
     const obtemInformacoesDaEscola = () => {
-        api.get(`escolas/?id=${informacoes.escola_id}`).then( (resposta) => { console.log(resposta.data);setEscola( resposta.data[0] );} );
+        api.get(`escolas/?id=${informacoes.escola_id}`).then( (resposta) => setEscola( resposta.data[0])  );
     };
 
 
@@ -50,6 +51,8 @@ const TurmaInformacoes = ({...params}) => {
         <Navegacao caminhos={indiceNavegacao}></Navegacao>
         <InformacoesEscola dados={escola}/>
         <InformacoesTurma dados={informacoes}/>
+        <IconeNovoAlunoNaTurma dados={informacoes}/>
+
         {
             alunos.map( (aluno) => <Aluno key={aluno.id} dados={aluno}/> )
         }

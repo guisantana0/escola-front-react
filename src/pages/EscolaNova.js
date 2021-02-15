@@ -42,7 +42,6 @@ const EscolaNova = ({ ...params }) => {
   };
 
   const retornoSubmissao = (resposta) => {
-    console.log(resposta);
     if (resposta.data.sucesso) {
       history.push("/escolas");
     } else {

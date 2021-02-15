@@ -12,7 +12,6 @@ const IconeEscola = ({dados,...props}) => {
     }
 
     const retornoExclusao = (resposta)=> {
-        console.log(resposta);
         window.location.reload();
     }
 
