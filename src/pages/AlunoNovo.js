@@ -48,7 +48,7 @@ const AlunoNovo = ({ ...params }) => {
 
   const retornoSubmissao = (resposta) => {
     if (resposta.data.sucesso) {
-      history.push("/alunos");
+      history.goBack();
     } else {
       alert(resposta.data.mensagem);
     }
@@ -114,9 +114,9 @@ const AlunoNovo = ({ ...params }) => {
           
           <div className="mt-2">
             <label>Gênero</label>
-            <select name="genero" onChange={atualizaGenero} required placeholder="Selecione um gênero">
+            <select name="genero" value={aluno.genero} onChange={atualizaGenero} required placeholder="Selecione um gênero">
                 <option value>Selecione um gênero</option>
-                <option value="MASCULINO">
+                <option value="MASCULINO"   >
                     Masculino
                 </option>
                 <option value="FEMININO">

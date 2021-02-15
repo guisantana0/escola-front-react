@@ -18,7 +18,7 @@ const IconeEscola = ({dados,...props}) => {
     return (
         <Container>
             <div className="nome">
-                <Link to={`escolas/${dados.id}`}>
+                <Link to={`/escolas/${dados.id}`}>
                     <div>
                         <Titulo>
                             {dados.nome}
@@ -31,7 +31,7 @@ const IconeEscola = ({dados,...props}) => {
                 </Link>
             </div>
             
-                <Link to={`escola/manter/${dados.id}`}>
+                <Link to={`/escola/manter/${dados.id}`}>
                     <button className="warning m-3" >
                         Editar
                     </button>

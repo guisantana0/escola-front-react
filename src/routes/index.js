@@ -30,6 +30,7 @@ const Router = () => {
             <Route path="/turma/:id/novo-aluno" exact component={NovoAlunoNaTurma} />
             <Route path="/alunos" exact component={Alunos} />
             <Route path="/aluno/manter" exact component={AlunoNovo} />
+            <Route path="/aluno/manter/:id" exact component={AlunoNovo} />
           </Layout>
         </Switch>
       </BrowserRouter>
