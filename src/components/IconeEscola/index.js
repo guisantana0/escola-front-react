@@ -3,7 +3,7 @@ import {Link} from 'react-router-dom';
 import { Container, Titulo, Endereco } from './styles';
 import api from "./../../services/api";
 
-const IconeEscola = ({dados,...props}) => {
+const IconeEscola = ({dados,children,...props}) => {
 
     const [informacoes, setInformacoes] = useState(dados);
 
@@ -26,11 +26,14 @@ const IconeEscola = ({dados,...props}) => {
                         <Endereco>
                             {dados.endereco}
                         </Endereco>
+                            {dados.total_alunos} alunos
                     </div>
                     
                 </Link>
             </div>
+
             
+
                 <Link to={`/escola/manter/${dados.id}`}>
                     <button className="warning m-3" >
                         Editar
@@ -42,6 +45,7 @@ const IconeEscola = ({dados,...props}) => {
                         Excluir
                     </button>
                 </span>
+                {children}
         </Container>
     );
 }

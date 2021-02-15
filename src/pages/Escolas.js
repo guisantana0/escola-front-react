@@ -10,7 +10,7 @@ const Escolas =  () => {
     const [escolas,setEscolas] = useState([]);
     
     const obterEscolasDaApi = () =>{
-        api.get('escolas/').then( resultado => setEscolas(resultado.data))
+        api.get('/escolas/total-alunos/').then( resultado => setEscolas(resultado.data))
     };
 
     useEffect(() => {
