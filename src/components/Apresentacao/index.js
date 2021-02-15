@@ -7,7 +7,7 @@ export default function Apresentacao() {
   return (
     <>
       <Container>
-        <Link to="/escolas">
+        <Link to="/principal">
           <BotaoAcessar>
             Acessar
           </BotaoAcessar>

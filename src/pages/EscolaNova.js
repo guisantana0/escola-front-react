@@ -16,7 +16,7 @@ const EscolaNova = ({ ...params }) => {
   const id = params.match.params.id;
 
   const indiceNavegacao = [
-    { nome: "Principal", rota: "/" },
+    {nome:'Principal',rota:'/principal'},
     { nome: "Escola", rota: "/escolas" },
   ];
 

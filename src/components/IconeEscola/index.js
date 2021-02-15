@@ -17,29 +17,31 @@ const IconeEscola = ({dados,...props}) => {
 
     return (
         <Container>
-            <Link to={`escolas/${dados.id}`}>
-                <div>
-                    <Titulo>
-                        {dados.nome}
-                    </Titulo>
-                    <Endereco>
-                        {dados.endereco}
-                    </Endereco>
-                </div>
-                
-            </Link>
+            <div className="nome">
+                <Link to={`escolas/${dados.id}`}>
+                    <div>
+                        <Titulo>
+                            {dados.nome}
+                        </Titulo>
+                        <Endereco>
+                            {dados.endereco}
+                        </Endereco>
+                    </div>
+                    
+                </Link>
+            </div>
             
-            <Link to={`escola/manter/${dados.id}`}>
-                <button className="warning m-3" >
-                    Editar
-                </button>
-            </Link>
+                <Link to={`escola/manter/${dados.id}`}>
+                    <button className="warning m-3" >
+                        Editar
+                    </button>
+                </Link>
 
-            <span>
-                <button className="danger m-3" onClick={mandaExcluir}>
-                    Excluir
-                </button>
-            </span>
+                <span>
+                    <button className="danger m-3" onClick={mandaExcluir}>
+                        Excluir
+                    </button>
+                </span>
         </Container>
     );
 }

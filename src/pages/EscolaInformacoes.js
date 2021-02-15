@@ -25,7 +25,7 @@ const EscolaInformacoes = ({ ...params }) => {
     useEffect(buscaTurmasDaEscola,[]);
 
     const indiceNavegacao = [
-        {nome:'Principal',rota:'/'},
+        {nome:'Principal',rota:'/principal'},
         {nome:'Escola',rota:'/escolas'},
     ]
 

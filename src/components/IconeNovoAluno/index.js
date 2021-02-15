@@ -6,7 +6,7 @@ import { Container } from './styles';
 const IconeNovoAluno = () => {
   return (
       <Container>
-        <Link>
+        <Link to="/aluno/manter/">
             + Cadastrar um novo aluno
         </Link>
       </Container>

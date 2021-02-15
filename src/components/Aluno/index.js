@@ -5,8 +5,7 @@ import {NomeDoAluno, InformacoesPessoais, Container} from './styled';
 const Aluno = ({dados, ...resto}) => {
     
     return (
-        <>
-        <Container>
+        <Container {...resto}>
             <NomeDoAluno>
                 {dados.nome}
             </NomeDoAluno>
@@ -29,7 +28,6 @@ const Aluno = ({dados, ...resto}) => {
 
             </InformacoesPessoais>
         </Container>
-        </>
     );
 }
 

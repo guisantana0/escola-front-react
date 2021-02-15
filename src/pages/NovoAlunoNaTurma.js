@@ -24,7 +24,7 @@ function NovoAlunoNaTurma({...params}) {
   };
 
   const indiceNavegacao = [
-    { nome: "Principal", rota: "/" },
+    {nome:'Principal',rota:'/principal'},
     { nome: "Escola", rota: "/escolas" },
   ];
 
@@ -40,6 +40,7 @@ function NovoAlunoNaTurma({...params}) {
 
           <div>
             {alunos.map((aluno) => (
+
               <Aluno
                 key={aluno.id}
                 dados={aluno}

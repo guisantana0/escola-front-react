@@ -41,7 +41,7 @@ const TurmaInformacoes = ({...params}) => {
 
     
     const indiceNavegacao = [
-        {nome:'Principal',rota:'/'},
+        {nome:'Principal',rota:'/principal'},
         {nome:'Escola',rota:'/escolas'},
         {nome: escola?.nome ,rota:`/escolas/${escola?.id}`},
     ]

@@ -5,6 +5,7 @@ export const Container = styled.div`
   flex-direction:row;
   border-radius: 10px;
   background-color: white;
+  
 
   a{
       text-decoration:none;
@@ -18,6 +19,14 @@ export const Container = styled.div`
   margin: 12px;
  
  background-color:#ffffff;
+
+  .nome {
+      align-self: flex-start;
+  }
+
+  .acoes {
+      align-self: flex-end;
+  }
 `;
 
 export const Titulo = styled.div`

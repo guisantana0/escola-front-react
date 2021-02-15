@@ -18,12 +18,12 @@ const Escolas =  () => {
     }, []);
 
     const indiceNavegacao = [
-        {nome:'Principal',rota:'/'},
+        {nome:'Principal',rota:'/principal'},
     ]
     
     return (<>
         <Navegacao caminhos={indiceNavegacao}></Navegacao>
-        <IconeNovaEscola></IconeNovaEscola>
+        <IconeNovaEscola />
         {
             escolas.map( 
                 (escola) => (<IconeEscola key={escola.id} dados={escola}/> )

@@ -7,7 +7,7 @@ const IconeNovoAlunoNaTurma = ({dados}) => {
     return (
         <Container>
             <Link to={`/turma/${dados?.id}/novo-aluno`}>
-                + Adicionar Novo Aluno
+                + Adicionar aluno na turma
             </Link>
         </Container>);
 }

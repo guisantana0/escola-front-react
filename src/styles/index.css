@@ -97,6 +97,43 @@ input[type='number']{
   transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
 }
 
+
+input[type='email']{
+  display: block;
+  width: -webkit-fill-available;
+  padding: .375rem .75rem;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #212529;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid #ced4da;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border-radius: .25rem;
+  transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+input[type='date']{
+  display: block;
+  width: -webkit-fill-available;
+  padding: .375rem .75rem;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #212529;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid #ced4da;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border-radius: .25rem;
+  transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
 button{
     display: inline-block;
     font-weight: 400;
@@ -190,4 +227,18 @@ button:hover{
 }
 .m-3{
   margin:15px;
+}
+
+.mt-1{
+  margin-top:5px;
+}
+.mt-2{
+  margin-top:10px;
+}
+.mt-3{
+  margin-top:15px;
+}
+
+a{
+  text-decoration: none;
 }
