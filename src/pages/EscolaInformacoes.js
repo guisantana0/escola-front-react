@@ -36,7 +36,21 @@ const EscolaInformacoes = ({ ...params }) => {
             }
                 <IconeNovaTurmaEscola id={informacoes[0]?.id}></IconeNovaTurmaEscola>
             {
-                turmas.map((turma)=> <TurmaEscola key={turma.id} dados={turma}/>)
+                turmas.map((turma)=> (
+                        <TurmaEscola key={turma.id} dados={turma}>
+                            <div className="mt-3">
+                                <Link to={`/turma/manter/${turma.id}`}>
+                                    <button className="warning mr-3">
+                                        Editar informações
+                                    </button>
+                                </Link>
+                                <button className="danger ml-3 pull-right" >
+                                    X Desabilitar
+                                </button>
+                            </div>
+                            
+                        </TurmaEscola>
+                    ))
             }
     
     </>);

@@ -7,11 +7,7 @@ import api from '../services/api';
 const Alunos = () => {
     const [alunos,setAlunos] = useState([]);
 
-
     const buscarAlunos = (e) => {
-        if (e == undefined){
-            return;
-        }
         const url = `alunos/nome/?&nome=${e?.target.value}`;
         api.get(url).then( (resposta) => setAlunos(resposta.data) );
     };
@@ -20,7 +16,10 @@ const Alunos = () => {
         {nome:'Principal',rota:'/principal'},        
       ];
 
-      useEffect(buscarAlunos, []);
+      const inicio = ()=>{
+          buscarAlunos({target:{value:''}});
+      }
+      useEffect(inicio, []);
 
   return (
       <>

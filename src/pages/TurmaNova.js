@@ -3,16 +3,19 @@ import api from "../services/api";
 import { useHistory } from "react-router-dom";
 
 import InformacoesEscola from './../components/InformacoesEscola';
+import Navegacao from '../components/Navegacao';
 
-const TurmaNova = ({...params}) => {
+const TurmaNova = ({dados,...params}) => {
     const history = useHistory();
     const [escola,setEscola] = useState([]);
-    const [turma,setTurma] = useState([]);
+    const [turma,setTurma] = useState({});
 
     const id_escola = params.match.params.id;
+    const turma_id = params.match.params.turma_id;
 
 
     const inicio = ()=>{
+        buscaInformacoesDaTurma();
         buscaInformacoesDaEscola();
     };
 
@@ -33,26 +36,58 @@ const TurmaNova = ({...params}) => {
     }
     const submeterFormulario = (e) => {
         e.preventDefault();
-        api.post('/turma/adicionar',turma).then(retornoSalvar);
+        if (turma.id == undefined) {
+          api.post("/turma/adicionar", turma).then(retornoSalvar);
+        } else {
+          api.post("/turma/atualizar", turma).then(retornoSalvar);
+        }
     }
 
     const retornoSalvar = (e) => {
-        history.push(`/escolas/${id_escola}`);
+        history.goBack();
     }
 
     const buscaInformacoesDaEscola = () => {
         api.get(`/escolas/?&id=${id_escola}`).then( resultado => setEscola(resultado.data));
     };
 
+    const buscaInformacoesDaEscolaPorID = (id) => {
+        api.get(`/escolas/?&id=${id}`).then( resultado => setEscola(resultado.data));
+    };
+
+    const buscaInformacoesDaTurma = () => {
+        api.get(`/turmas/?&id=${turma_id}`).then(atualizaInformacoesDaTurmaEscola);
+        // api.get(`/turmas/?&id=${turma_id}`).then( (resultado) => setTurma(resultado.data[0]));
+    };
+
+    const atualizaInformacoesDaTurmaEscola = (resultado) => {
+        const dados = resultado.data[0];
+        if (dados != undefined){
+            setTurma(dados);
+            buscaInformacoesDaEscolaPorID(dados.escola_id);
+        }
+    }
+
     const atualizaVinculoEscolaTurma = () => {
-        setTurma({ ...turma, escola_id: escola[0]?.id } );
+        if (escola[0] != undefined){
+            setTurma({...turma, escola_id: escola[0].id});
+        }
+        
     }
 
     useEffect(inicio, []);
+    useEffect(() => {console.log(turma)}, [turma]);
     useEffect(atualizaVinculoEscolaTurma, [escola]);
+
+    const indiceNavegacao = [
+        { nome: "Principal", rota: "/principal" },
+        { nome: "Escola", rota: "/escolas" },
+        { nome: escola[0]?.nome, rota: `/escolas/${escola[0]?.id}` },
+      ];
 
     return (
         <>
+            <Navegacao caminhos={indiceNavegacao}></Navegacao>
             {
                 escola.map((informacao)=> <InformacoesEscola key={informacao.id} dados={informacao}/>)
             }
@@ -63,14 +98,17 @@ const TurmaNova = ({...params}) => {
                     <label>
                         Série da turma
                     </label>
-                    <input className="form-control" type="number" max="10" min="0" name="serie" value={turma.serie} onChange={alterarSerie} />
+                    <input className="form-control" type="number" max="10" min="0" name="serie" value={turma?.serie} onChange={alterarSerie} />
                 </div>
                 
                 <div className="form-group">
                     <label>
                         Nível de ensino
                     </label>
-                    <select name="nivel_ensino" className="form-control" onChange={alterarNivel}>
+                    <select name="nivel_ensino" value={turma?.nivel_ensino} className="form-control" onChange={alterarNivel} required>
+                        <option value="">
+                            Selecione
+                        </option>
                         <option value="Básico">
                             Básico
                         </option>
@@ -88,7 +126,10 @@ const TurmaNova = ({...params}) => {
                     <label>
                         Turno
                     </label>
-                    <select name="turno" className="form-control" onChange={alterarTurno}>
+                    <select name="turno" value={turma?.turno} className="form-control" onChange={alterarTurno} required>
+                        <option value="">
+                            Selecione
+                        </option>
                         <option value="Matutino">
                             Matutino
                         </option>
@@ -109,11 +150,11 @@ const TurmaNova = ({...params}) => {
                         Ano
                     </label>
 
-                    <input className="form-control" type="number" maxLength="4" value={turma.ano} onChange={alterarAno} />
+                    <input className="form-control" type="number" maxLength="4" value={turma?.ano} onChange={alterarAno} />
                 </div>
                 
                 <div className="form-group">
-                    <button className="success pull-right">
+                    <button className="success pull-right" type='submit'>
                         Salvar
                     </button>
                 </div>

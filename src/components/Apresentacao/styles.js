@@ -3,18 +3,19 @@ import imagem from './../../assets/apresentacao.png';
 import imagemLandscape from './../../assets/apresentacao-landscape.png';
 
 export const Container = styled.div`
-/* 
+
 display:flex;
-flex-direction: column;
-justify-content:center;
+
+flex-direction: column-reverse;
+justify-content:start;
 align-items:center;
-align-content:center; */
+align-content:center;
 
 background-image: url(${imagemLandscape});
 width:100%;
 height:100vh;
 background-size:cover;
-
+  /* display */
 @media screen and (max-width: 1080px) and (orientation: portrait) {
   background-image: url(${imagem});
   width:100%;
@@ -36,29 +37,10 @@ export const BotaoAcessar = styled.button`
     border-radius:10px;
     border:0;
     background-color: #67bafe;
-
     padding: 12px 24px 12px 24px;
-    margin-top:30%;
-    margin-left:80%;
-
-
-    @media screen and (min-width: 1081px) and (orientation: portrait) {
-        margin-top:80%;
-        margin-left:10%;
-        padding: 12px 32px 12px 32px;
-    }
-
-    @media screen and (max-width: 1080px) and (orientation: landscape) {
-        padding: 12px 24px 12px 24px;
-        margin-top:30%;
-        margin-left:80%;
-    }
-
-    @media screen and (max-width: 720) and (orientation: landscape) {
-      padding: 12px 24px 12px 24px;
-        margin-top:30%;
-        margin-left:80%;
-    }
+    margin-bottom:100%;
+    display: flex;
+    align-self:center;
     
 
     color: white;

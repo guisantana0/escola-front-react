@@ -27,6 +27,7 @@ const Router = () => {
             <Route path="/escola/:id/nova-turma" exact component={TurmaNova} />
             <Route path="/escolas/:id" exact component={EscolaInformacoes} />
             <Route path="/turma/:id" exact component={TurmaInformacoes} />
+            <Route path="/turma/manter/:turma_id" exact component={TurmaNova} />
             <Route path="/turma/:id/novo-aluno" exact component={NovoAlunoNaTurma} />
             <Route path="/alunos" exact component={Alunos} />
             <Route path="/aluno/manter" exact component={AlunoNovo} />
